@@ -1,5 +1,4 @@
 ---
-
 - name: Configure linux kernel boot options in grub
   ansible.builtin.lineinfile:
     path: /etc/default/grub
@@ -9,4 +8,3 @@
   loop: "{{ grub_cmdline_options_present }}"
   notify: Reconfigure grub
   become: true
-  become_user: root
